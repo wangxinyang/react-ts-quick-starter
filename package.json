@@ -1,0 +1,68 @@
+{
+  "name": "react-ts-quick-starter",
+  "version": "1.0.0",
+  "description": "webapck5でreact+typescriptを構築するの汎用プロジェクト",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangxinyang/react-ts-quick-starter.git"
+  },
+  "keywords": [
+    "webpack",
+    "react-typescript",
+    "react-ts-quick-starter"
+  ],
+  "author": {
+    "name": "tosei",
+    "url": "https://github.com/wangxinyang",
+    "email": "wangxinyang1983@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangxinyang/react-ts-quick-starter/issues"
+  },
+  "homepage": "https://github.com/wangxinyang/react-ts-quick-starter",
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.0",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.0.2",
+    "html-webpack-plugin": "^5.2.0",
+    "less": "^4.1.1",
+    "less-loader": "^8.0.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.6",
+    "postcss-loader": "^5.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "react-refresh": "^0.9.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "typescript": "^4.1.5",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.24.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "4.0.0-beta.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie >= 9",
+    "not op_mini all"
+  ]
+}
