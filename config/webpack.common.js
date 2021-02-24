@@ -44,6 +44,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
+    // 配置别名不用再一层一层的../../和tsconfig.json中的baseUrl和paths配合
+    alias: {
+      src: path.resolve(__dirname, '/src'),
+      components: path.resolve(__dirname, '/src/components'),
+    },
   },
   module: {
     rules: [
@@ -125,5 +130,9 @@ module.exports = {
       template: './public/index.html',
     }),
     new ReactRefreshWebpackPlugin(),
+    // 配置ProvidePlugin就不需要每个组件都import React from 'react了
+    new webpack.ProvidePlugin({
+      React: 'react',
+    }),
   ],
 }
