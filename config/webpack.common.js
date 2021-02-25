@@ -3,6 +3,7 @@ const { isDev } = require('./constants')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const WebpackBar = require('webpackbar')
 const webpack = require('webpack')
 
 const getCssLoaders = (importLoaders) => [
@@ -139,6 +140,10 @@ module.exports = {
     // typings-for-css-modules-loader会生成.d.ts文件，需要告诉webpack忽略它们。
     new webpack.WatchIgnorePlugin({
       paths: [/css\.d\.ts$/, /scss\.d\.ts$/],
+    }),
+    new WebpackBar({
+      name: isDev ? 'runned' : 'packaged',
+      color: '#fa8c16',
     }),
   ],
 }
