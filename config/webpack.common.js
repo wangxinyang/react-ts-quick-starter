@@ -84,8 +84,8 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          ...getCssLoaders(3),
           '@teamsupercell/typings-for-css-modules-loader',
-          ...getCssLoaders(2),
           {
             loader: 'sass-loader',
             options: {
