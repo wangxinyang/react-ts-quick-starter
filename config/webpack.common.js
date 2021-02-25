@@ -3,10 +3,10 @@ const { isDev } = require('./constants')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const webpack = require('webpack')
 
 const getCssLoaders = (importLoaders) => [
   'style-loader',
-  '@teamsupercell/typings-for-css-modules-loader',
   {
     loader: 'css-loader',
     options: {
@@ -58,7 +58,7 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           cacheDirectory: true,
-          plugins: [`${isDev ? 'react-refresh/babel' : ''}`],
+          plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
         },
         exclude: /node_modules/,
       },
@@ -83,6 +83,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
+          '@teamsupercell/typings-for-css-modules-loader',
           ...getCssLoaders(2),
           {
             loader: 'sass-loader',
@@ -109,7 +110,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(ttf|woff|woff2|eot|otf)$/,
+        test: /\.(ttf|woff|woff2|eot|otf|svg)$/,
         use: [
           {
             loader: 'url-loader',
