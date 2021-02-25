@@ -6,6 +6,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 const getCssLoaders = (importLoaders) => [
   'style-loader',
+  '@teamsupercell/typings-for-css-modules-loader',
   {
     loader: 'css-loader',
     options: {
@@ -133,6 +134,10 @@ module.exports = {
     // 配置ProvidePlugin就不需要每个组件都import React from 'react了
     new webpack.ProvidePlugin({
       React: 'react',
+    }),
+    // typings-for-css-modules-loader会生成.d.ts文件，需要告诉webpack忽略它们。
+    new webpack.WatchIgnorePlugin({
+      paths: [/css\.d\.ts$/, /scss\.d\.ts$/],
     }),
   ],
 }

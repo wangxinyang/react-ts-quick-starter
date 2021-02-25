@@ -14,5 +14,6 @@ module.exports = merge(base, {
     compress: true, // 是否启用 gzip 压缩
     open: true, // 打开默认浏览器
     hot: true, // 热更新
+    historyApiFallback: true, // 地址栏访问指定路由时出现了404需要配置
   },
 })
