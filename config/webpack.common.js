@@ -60,7 +60,8 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           cacheDirectory: true,
-          plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+          // @babel/plugin-transform-runtime解决webpack没有校验高级的es6语法
+          plugins: ['@babel/plugin-transform-runtime', isDev && require.resolve('react-refresh/babel')].filter(Boolean),
         },
         exclude: /node_modules/,
       },
