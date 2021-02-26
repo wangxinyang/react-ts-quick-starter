@@ -43,6 +43,7 @@ module.exports = {
   output: {
     filename: `[name]${isDev ? '' : '.[chunkhash:8]'}.js`,
     path: path.resolve(__dirname, '../dist'), // 設定しないと、CleanWebpackPluginが効かない
+    publicPath: '/', // 解决url的层级变化导致加载js的404问题
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
