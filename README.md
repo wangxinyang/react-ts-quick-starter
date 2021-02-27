@@ -1,1 +1,1 @@
-# React+TS+Webpack の迅速に構築するの基礎工程
+# React+TS+Webpack5 の迅速に構築するの汎用工程
