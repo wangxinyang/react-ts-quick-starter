@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const WebpackBar = require('webpackbar')
 const webpack = require('webpack')
+const px2rem = require('postcss-px2rem')
 
 const getCssLoaders = (importLoaders) => [
   'style-loader',
@@ -30,6 +31,7 @@ const getCssLoaders = (importLoaders) => [
               },
               stage: 3,
             },
+            px2rem({ remUnit: 37.5 }),
           ],
         ],
       },
